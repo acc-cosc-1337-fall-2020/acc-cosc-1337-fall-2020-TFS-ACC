@@ -51,36 +51,3 @@ string get_letter_grade_using_switch(int grade){
 
     return switch_grade;
 }
-
-//SWITCH
-// string get_letter_grade_using_switch(int grade){
-//     string switch_grade;
-
-//     switch (grade / 10) {
-//         case(5):
-//             if (grade >= 90 && grade < 100)
-//             switch_grade = "A";
-//             break;
-//         case(2):
-//             if (grade >= 80 && grade < 90)
-//             switch_grade = "B";
-//             break;
-//         case(3):
-//             if (grade >= 70 && grade < 80)
-//             switch_grade = "C";
-//             break;
-//         case(4):
-//             if (grade >= 60 && grade < 70)
-//             switch_grade = "D";
-//             break;
-//         case(5):
-//             if (grade <= 50 && grade > 0)
-//             switch_grade = "F";
-//             break;
-//         default:
-//             cout << "The number you have entered is out of range." << "\n";
-//             break;
-//     }
-
-//     return switch_grade;
-// }
