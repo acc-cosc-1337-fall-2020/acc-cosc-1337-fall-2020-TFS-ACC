@@ -27,6 +27,11 @@ string get_letter_grade_using_switch(int grade){
     string switch_grade;
 
     switch (grade / 10) {
+        case 0:
+        case 1:
+        case 2: 
+        case 3: 
+        case 4:
         case(5):
             switch_grade = "F";
             break;
