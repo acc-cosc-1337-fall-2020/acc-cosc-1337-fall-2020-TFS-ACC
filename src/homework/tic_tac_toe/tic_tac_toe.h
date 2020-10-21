@@ -30,7 +30,7 @@ class TicTacToe
     //PRIV.FUNCTIONS
     void set_next_player();
     bool check_board_full();
-    void clear_board() const;
+    void clear_board();
 
 };
 

@@ -60,6 +60,6 @@ bool TicTacToe::check_board_full(){
     }
 }
 
-void TicTacToe::clear_board() const {
+void TicTacToe::clear_board(){
     vector<string> pegs = vector<string>(9, " ");
 }
