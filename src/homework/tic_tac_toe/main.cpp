@@ -4,44 +4,46 @@
 int main() 
 {
 
-	string playerOne;
+	string playerOne, winner;
 	char cont = 'Y';
 	int position;
 	TicTacToe game;
 
 	do{
 
-		cout << "Decide which player is \'X\' and which player is \'O\' " << "\n" << "Enter First Player Here: ";
-		cin >> playerOne;
+		do{
 
-	}while(playerOne != "O" && playerOne != "X" && playerOne != "o" && playerOne != "x");
+			cout << "Decide which player is \'X\' and which player is \'O\' " << "\n" << "Enter First Player Here: ";
+			cin >> playerOne;
 
-	game.start_game(playerOne);
-
-	cout << "G A M E  B E G I N" << "\n" << "Current board layout:" << "\n";
-
-	game.display_board();
-
-	cout << "Position Numbers: " << "\n"
-	<< 1 << " " << 2 << " " << 3 << "\n"
-	<< 4 << " " << 5 << " " << 6 << "\n"
-	<< 7 << " " << 8 << " " << 9 << "\n";
-
-
-	do{
-
-		string currentPlayer = game.get_player();
-
-		cout << currentPlayer << "\'s turn"<< "\n" << " " << "Please Choose a Position number!: ";
-		cin >> position;
-
-		game.mark_board(position);
-
-		game.display_board();
+		}while(playerOne != "O" && playerOne != "X" && playerOne != "o" && playerOne != "x");
 		
-		cout << "Continue playing? (Y or y): ";
-		cin >> cont;
+		game.start_game(playerOne);
 
+		do{
+
+			string currentPlayer = game.get_player();
+
+			cout << currentPlayer << "\'s turn"<< "\n" << " " << "Please Choose a Position number!: ";
+			cin >> position;
+
+			game.mark_board(position);
+
+			game.display_board();
+		
+			cout << "Continue playing? (Y or y): ";
+			cin >> cont;
+
+		}while(game.game_over() == false);
+
+		winner = game.get_winner();
+
+		cout << "W I N N E R!: " << winner << "\n";
+
+		cout << "Do you want to play again? (Y or y): ";
+
+		cin >> cont;
+		
 	}while(cont == 'Y' || cont == 'y');
 
 	return 0;
