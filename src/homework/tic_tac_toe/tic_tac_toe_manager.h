@@ -14,10 +14,11 @@ class TicTacToeManager
     public: ////////////////////////
 
         //Public Variables
-        vector<TicTacToe> games;
+        //vector<TicTacToe> games;
+        vector<unique_ptr<TicTacToe>> games;
 
         //Public Functions
-        void save_game(const TicTacToe game);
+        void save_game(unique_ptr<TicTacToe>& game);
         void get_winner_total(int& x, int& o, int& t);
         friend ostream& operator<< (ostream& os, TicTacToeManager& man);
 

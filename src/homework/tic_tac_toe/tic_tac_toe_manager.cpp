@@ -3,21 +3,29 @@
 
 
 //Public Functions
-void TicTacToeManager::save_game(const TicTacToe game){
+void TicTacToeManager::save_game(unique_ptr<TicTacToe>& game){
 
-    string winner = game.get_winner();
+    string winner = game->get_winner();
     TicTacToeManager::update_winner_count(winner);
-    TicTacToeManager::games.push_back(game); 
+    TicTacToeManager::games.push_back(move(game)); 
 
 }
 
 ostream& operator<< (ostream& os, TicTacToeManager& man){
 
-    for (int i = 0; i < man.games.size(); i++){
+    // for (int i = 0; i < man.games.size(); i++){
 
-        cout << man.games[i];
+    //     cout << man.games[i];
+
+    // }
+
+    for (auto & i : man.games){
+
+        cout << *i;
 
     }
+
+        return os;
 
 }
 

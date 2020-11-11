@@ -1,7 +1,6 @@
 //cpp
 #include "tic_tac_toe.h"
 
-
 //PUB.FUNCTIONS///////////////////////////////////////
 bool TicTacToe::game_over(){
 
@@ -58,13 +57,33 @@ string TicTacToe::get_player() const {
 
 ostream& operator<< (ostream& os, TicTacToe& tic){
 
-    cout << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
-        << "|" << " " << tic.pegs[0] << " " << "|" << " " << tic.pegs[1] << " " << "|" << " " << tic.pegs[2] << " " << "|" << "\n"
-        << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
-        << "|" << " " << tic.pegs[3] << " " << "|" << " " << tic.pegs[4] << " " << "|" << " " << tic.pegs[5] << " " << "|" << "\n"
-        << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
-        << "|" << " " << tic.pegs[6] << " " << "|" << " " << tic.pegs[7] << " " << "|" << " " << tic.pegs[8] << " " << "|" << "\n"
-        << " " << "---" << " " << "---" << " " << "---" << " " << "\n" << "\n";
+    if (tic.pegs.size() == 9){
+
+        cout << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
+            << "|" << " " << tic.pegs[0] << " " << "|" << " " << tic.pegs[1] << " " << "|" << " " << tic.pegs[2] << " " << "|" << "\n"
+            << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
+            << "|" << " " << tic.pegs[3] << " " << "|" << " " << tic.pegs[4] << " " << "|" << " " << tic.pegs[5] << " " << "|" << "\n"
+            << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
+            << "|" << " " << tic.pegs[6] << " " << "|" << " " << tic.pegs[7] << " " << "|" << " " << tic.pegs[8] << " " << "|" << "\n"
+            << " " << "---" << " " << "---" << " " << "---" << " " << "\n" << "\n";
+
+    }else if (tic.pegs.size() == 16){
+
+        cout << " " << "---" << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
+            << "|" << " " << tic.pegs[0] << " " << "|" << " " << tic.pegs[1] << " " << "|" << " " << tic.pegs[2] << " " << "|" << " " << tic.pegs[3] << " " << "|" << "\n"
+            << " " << "---" << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
+            << "|" << " " << tic.pegs[4] << " " << "|" << " " << tic.pegs[5] << " " << "|" << " " << tic.pegs[6] << " " << "|" << " " << tic.pegs[7] << " " << "|" << "\n"
+            << " " << "---" << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
+            << "|" << " " << tic.pegs[8] << " " << "|" << " " << tic.pegs[9] << " " << "|" << " " << tic.pegs[10] << " " << "|" << " " << tic.pegs[11] << " " << "|" << "\n"
+            << " " << "---" << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
+            << "|" << " " << tic.pegs[12] << " " << "|" << " " << tic.pegs[13] << " " << "|" << " " << tic.pegs[14] << " " << "|" << " " << tic.pegs[15] << " " << "|" << "\n"
+            << " " << "---" << " " << "---" << " " << "---" << " " << "---" << " " << "\n" << "\n";
+
+    }else{
+
+        cout << "something has gone very wrong indeed with determining board size upon output. (tic_tac_toe.cpp, ostream)" << "\n" ;
+
+    }
     
     return os;
 
@@ -114,57 +133,61 @@ void TicTacToe::clear_board(){
 
 bool TicTacToe::check_column_win(){
 
-    if (TicTacToe::pegs[0] == "X" && TicTacToe::pegs[3] == "X" && TicTacToe::pegs[6] == "X"){ 
-        return true;
-    } else if (TicTacToe::pegs[1] == "X" && TicTacToe::pegs[4] == "X" && TicTacToe::pegs[7] == "X" ){
-        return true;
-    } else if (TicTacToe::pegs[2] == "X" && TicTacToe::pegs[5] == "X" && TicTacToe::pegs[8] == "X" ){
-        return true;
-    } else if (TicTacToe::pegs[0] == "O" && TicTacToe::pegs[3] == "O" && TicTacToe::pegs[6] == "O" ){
-        return true;
-    } else if (TicTacToe::pegs[1] == "O" && TicTacToe::pegs[4] == "O" && TicTacToe::pegs[7] == "O" ){
-        return true;
-    } else if (TicTacToe::pegs[2] == "O" && TicTacToe::pegs[5] == "O" && TicTacToe::pegs[8] == "O" ){
-        return true;
-    } else {
-        return false;
-    }
+    // if (TicTacToe::pegs[0] == "X" && TicTacToe::pegs[3] == "X" && TicTacToe::pegs[6] == "X"){ 
+    //     return true;
+    // } else if (TicTacToe::pegs[1] == "X" && TicTacToe::pegs[4] == "X" && TicTacToe::pegs[7] == "X" ){
+    //     return true;
+    // } else if (TicTacToe::pegs[2] == "X" && TicTacToe::pegs[5] == "X" && TicTacToe::pegs[8] == "X" ){
+    //     return true;
+    // } else if (TicTacToe::pegs[0] == "O" && TicTacToe::pegs[3] == "O" && TicTacToe::pegs[6] == "O" ){
+    //     return true;
+    // } else if (TicTacToe::pegs[1] == "O" && TicTacToe::pegs[4] == "O" && TicTacToe::pegs[7] == "O" ){
+    //     return true;
+    // } else if (TicTacToe::pegs[2] == "O" && TicTacToe::pegs[5] == "O" && TicTacToe::pegs[8] == "O" ){
+    //     return true;
+    // } else {
+    //     return false;
+    // }
+
+    return true;
 
 }
 
 bool TicTacToe::check_row_win(){
 
-   if (TicTacToe::pegs[0] == "X" && TicTacToe::pegs[1] == "X" && TicTacToe::pegs[2] == "X"){ 
-        return true;
-    } else if (TicTacToe::pegs[3] == "X" && TicTacToe::pegs[4] == "X" && TicTacToe::pegs[5] == "X" ){
-        return true;
-    } else if (TicTacToe::pegs[6] == "X" && TicTacToe::pegs[7] == "X" && TicTacToe::pegs[8] == "X" ){
-        return true;
-    } else if (TicTacToe::pegs[0] == "O" && TicTacToe::pegs[1] == "O" && TicTacToe::pegs[2] == "O" ){
-        return true;
-    } else if (TicTacToe::pegs[3] == "O" && TicTacToe::pegs[4] == "O" && TicTacToe::pegs[5] == "O" ){
-        return true;
-    } else if (TicTacToe::pegs[6] == "O" && TicTacToe::pegs[7] == "O" && TicTacToe::pegs[8] == "O" ){
-        return true;
-    } else {
-        return false;
-    }
+//    if (TicTacToe::pegs[0] == "X" && TicTacToe::pegs[1] == "X" && TicTacToe::pegs[2] == "X"){ 
+//         return true;
+//     } else if (TicTacToe::pegs[3] == "X" && TicTacToe::pegs[4] == "X" && TicTacToe::pegs[5] == "X" ){
+//         return true;
+//     } else if (TicTacToe::pegs[6] == "X" && TicTacToe::pegs[7] == "X" && TicTacToe::pegs[8] == "X" ){
+//         return true;
+//     } else if (TicTacToe::pegs[0] == "O" && TicTacToe::pegs[1] == "O" && TicTacToe::pegs[2] == "O" ){
+//         return true;
+//     } else if (TicTacToe::pegs[3] == "O" && TicTacToe::pegs[4] == "O" && TicTacToe::pegs[5] == "O" ){
+//         return true;
+//     } else if (TicTacToe::pegs[6] == "O" && TicTacToe::pegs[7] == "O" && TicTacToe::pegs[8] == "O" ){
+//         return true;
+//     } else {
+//         return false;
+//     }
+    return true;
 
 }
 
 bool TicTacToe::check_diagonal_win(){
 
-   if (TicTacToe::pegs[0] == "X" && TicTacToe::pegs[4] == "X" && TicTacToe::pegs[8] == "X"){ 
-        return true;
-    } else if (TicTacToe::pegs[6] == "X" && TicTacToe::pegs[4] == "X" && TicTacToe::pegs[2] == "X" ){
-        return true;
-    } else if (TicTacToe::pegs[0] == "O" && TicTacToe::pegs[4] == "O" && TicTacToe::pegs[8] == "O" ){
-        return true;
-    } else if (TicTacToe::pegs[6] == "O" && TicTacToe::pegs[4] == "O" && TicTacToe::pegs[2] == "O" ){
-        return true;
-    } else {
-        return false;
-    }
+//    if (TicTacToe::pegs[0] == "X" && TicTacToe::pegs[4] == "X" && TicTacToe::pegs[8] == "X"){ 
+//         return true;
+//     } else if (TicTacToe::pegs[6] == "X" && TicTacToe::pegs[4] == "X" && TicTacToe::pegs[2] == "X" ){
+//         return true;
+//     } else if (TicTacToe::pegs[0] == "O" && TicTacToe::pegs[4] == "O" && TicTacToe::pegs[8] == "O" ){
+//         return true;
+//     } else if (TicTacToe::pegs[6] == "O" && TicTacToe::pegs[4] == "O" && TicTacToe::pegs[2] == "O" ){
+//         return true;
+//     } else {
+//         return false;
+//     }
+    return true;
 
 }
 

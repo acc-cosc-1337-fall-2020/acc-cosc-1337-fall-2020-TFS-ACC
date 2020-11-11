@@ -6,7 +6,7 @@ int main()
 
 	string playerOne, winner;
 	char cont = 'Y';
-	TicTacToe game;
+	// TicTacToe game(3);
 	TicTacToeManager Manager;
 	int xwin = 0;
 	int owin = 0; 

@@ -10,6 +10,25 @@ else
 false
 */
 
+bool TicTacToe3::check_column_win(){
+
+    if (TicTacToe3::pegs[0] == "X" && TicTacToe3::pegs[3] == "X" && TicTacToe3::pegs[6] == "X"){ 
+        return true;
+    } else if (TicTacToe3::pegs[1] == "X" && TicTacToe3::pegs[4] == "X" && TicTacToe3::pegs[7] == "X" ){
+        return true;
+    } else if (TicTacToe3::pegs[2] == "X" && TicTacToe3::pegs[5] == "X" && TicTacToe3::pegs[8] == "X" ){
+        return true;
+    } else if (TicTacToe3::pegs[0] == "O" && TicTacToe3::pegs[3] == "O" && TicTacToe3::pegs[6] == "O" ){
+        return true;
+    } else if (TicTacToe3::pegs[1] == "O" && TicTacToe3::pegs[4] == "O" && TicTacToe3::pegs[7] == "O" ){
+        return true;
+    } else if (TicTacToe3::pegs[2] == "O" && TicTacToe3::pegs[5] == "O" && TicTacToe3::pegs[8] == "O" ){
+        return true;
+    } else {
+        return false;
+    }
+
+}
 
 
 /*
@@ -20,6 +39,25 @@ Win by row if
 6,7,8 are equal
 */
 
+bool TicTacToe3::check_row_win(){
+
+   if (TicTacToe3::pegs[0] == "X" && TicTacToe3::pegs[1] == "X" && TicTacToe3::pegs[2] == "X"){ 
+        return true;
+    } else if (TicTacToe3::pegs[3] == "X" && TicTacToe3::pegs[4] == "X" && TicTacToe3::pegs[5] == "X" ){
+        return true;
+    } else if (TicTacToe3::pegs[6] == "X" && TicTacToe3::pegs[7] == "X" && TicTacToe3::pegs[8] == "X" ){
+        return true;
+    } else if (TicTacToe3::pegs[0] == "O" && TicTacToe3::pegs[1] == "O" && TicTacToe3::pegs[2] == "O" ){
+        return true;
+    } else if (TicTacToe3::pegs[3] == "O" && TicTacToe3::pegs[4] == "O" && TicTacToe3::pegs[5] == "O" ){
+        return true;
+    } else if (TicTacToe3::pegs[6] == "O" && TicTacToe3::pegs[7] == "O" && TicTacToe3::pegs[8] == "O" ){
+        return true;
+    } else {
+        return false;
+    }
+
+}
 
 
 /*
@@ -30,3 +68,18 @@ Win diagonally
 6 7 8
 
 */
+bool TicTacToe3::check_diagonal_win(){
+
+   if (TicTacToe3::pegs[0] == "X" && TicTacToe3::pegs[4] == "X" && TicTacToe3::pegs[8] == "X"){ 
+        return true;
+    } else if (TicTacToe3::pegs[6] == "X" && TicTacToe3::pegs[4] == "X" && TicTacToe3::pegs[2] == "X" ){
+        return true;
+    } else if (TicTacToe3::pegs[0] == "O" && TicTacToe3::pegs[4] == "O" && TicTacToe3::pegs[8] == "O" ){
+        return true;
+    } else if (TicTacToe3::pegs[6] == "O" && TicTacToe3::pegs[4] == "O" && TicTacToe3::pegs[2] == "O" ){
+        return true;
+    } else {
+        return false;
+    }
+
+}
