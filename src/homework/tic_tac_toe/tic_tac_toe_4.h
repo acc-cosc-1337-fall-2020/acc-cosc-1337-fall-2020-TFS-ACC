@@ -8,20 +8,21 @@ class TicTacToe4 : public TicTacToe {
 
     public://///////////////////////////////////////
 
-    TicTacToe4(): TicTacToe(4){}
-
     //PUB VAR
 
     //PUB FUNCT
+
+    //CONSTRUCTOR
+    TicTacToe4(): TicTacToe(4){};
 
     private:////////////////////////////////////////
 
     //PRIV VAR
 
     //PRIV FUNCT
-    bool check_column_win();
-    bool check_row_win();
-    bool check_diagonal_win();
+    bool check_column_win() override;
+    bool check_row_win() override;
+    bool check_diagonal_win() override;
 
     protected://////////////////////////////////////
 

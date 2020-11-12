@@ -4,7 +4,7 @@
 //PUB.FUNCTIONS///////////////////////////////////////
 bool TicTacToe::game_over(){
 
-    if(TicTacToe::check_row_win() == true || TicTacToe::check_column_win() == true || TicTacToe::check_diagonal_win() == true){
+    if(check_row_win() == true || check_column_win() == true || check_diagonal_win() == true){
         TicTacToe::set_winner();
         return true;
     // if(TicTacToe::check_column_win() == true){
@@ -24,15 +24,11 @@ void TicTacToe::start_game(string first_player){
         cout << "That is not a valid player input.";
     }else{
         TicTacToe::player = first_player;
+        //player = first_player;
     }
         TicTacToe::clear_board();
+        //clear_board();
         
-        cout << "Position Numbers: " << "\n"
-		<< 1 << " " << 2 << " " << 3 << "\n"
-		<< 4 << " " << 5 << " " << 6 << "\n"
-		<< 7 << " " << 8 << " " << 9 << "\n";
-
-        cout << "G A M E  B E G I N" << "\n" << "Current board layout:" << "\n";
 
 }
 
@@ -58,7 +54,7 @@ string TicTacToe::get_player() const {
 ostream& operator<< (ostream& os, TicTacToe& tic){
 
     if (tic.pegs.size() == 9){
-
+ 
         cout << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
             << "|" << " " << tic.pegs[0] << " " << "|" << " " << tic.pegs[1] << " " << "|" << " " << tic.pegs[2] << " " << "|" << "\n"
             << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
@@ -89,15 +85,15 @@ ostream& operator<< (ostream& os, TicTacToe& tic){
 
 }
 
-istream& operator>> (istream& is, TicTacToe& tic){
+istream& operator>> (istream& is, unique_ptr<TicTacToe>& tic){
 
-        string currentPlayer = tic.get_player();
+        string currentPlayer = tic->get_player();
         int position;
     	
         cout << currentPlayer << "\'s turn"<< "\n" << " " << "Please Choose a Position number!: ";
 		cin >> position;
 
-		tic.mark_board(position);    
+		tic->mark_board(position);    
 
     return is;
 
@@ -127,7 +123,9 @@ bool TicTacToe::check_board_full(){
 }
 
 void TicTacToe::clear_board(){
-    TicTacToe::pegs = vector<string>(9, " ");
+
+    TicTacToe::pegs = vector<string>(TicTacToe::pegs.size(), " ");
+
 }
 
 
@@ -149,7 +147,7 @@ bool TicTacToe::check_column_win(){
     //     return false;
     // }
 
-    return true;
+    return false;
 
 }
 
@@ -170,7 +168,7 @@ bool TicTacToe::check_row_win(){
 //     } else {
 //         return false;
 //     }
-    return true;
+    return false;
 
 }
 
@@ -187,7 +185,7 @@ bool TicTacToe::check_diagonal_win(){
 //     } else {
 //         return false;
 //     }
-    return true;
+    return false;
 
 }
 

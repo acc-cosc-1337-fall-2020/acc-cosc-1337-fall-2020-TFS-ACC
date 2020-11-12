@@ -14,7 +14,7 @@ class TicTacToe
     public://///////////////////////////////////////
 
         //CONSTRUCTOR
-        TicTacToe(int s): pegs((s*s), " "){};
+        TicTacToe(int s): pegs(s*s, " "){};
 
         //PUBLIC VARIABLES
         bool game_over();
