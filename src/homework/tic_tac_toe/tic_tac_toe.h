@@ -26,8 +26,8 @@ class TicTacToe
         //void display_board() const;
         string get_winner() const;
 
-        friend ostream& operator<< (ostream&, TicTacToe& tic);
-        friend istream& operator>> (istream&, TicTacToe& tic);
+        friend ostream& operator<< (ostream&, unique_ptr<TicTacToe>& tic);
+        friend istream& operator>> (istream&, unique_ptr<TicTacToe>& tic);
 
     private:////////////////////////////////////////
 
