@@ -8,7 +8,7 @@ int main()
 	//choices
 	char cont = 'Y';
 	string playerOne;
-	int board;
+	int board = 0;
 	
 	//outputs
 	int xwin = 0;
@@ -34,7 +34,7 @@ int main()
 			cout << "Choose between a 4x4 board (16 pegs) or a 3x3 board (9 pegs):(3/4) ";
 			cin >> board;
 
-		}while(board != 3 || board != 4);
+		}while(board != 3 && board != 4);
 
 		if(board == 3){
 

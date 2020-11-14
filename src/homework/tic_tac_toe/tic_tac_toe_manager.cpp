@@ -13,19 +13,13 @@ void TicTacToeManager::save_game(unique_ptr<TicTacToe>& game){
 
 ostream& operator<< (ostream& os, TicTacToeManager& man){
 
-    // for (int i = 0; i < man.games.size(); i++){
+    for (auto& game : man.games){
 
-    //     cout << man.games[i];
-
-    // }
-
-    for (auto & i : man.games){
-
-        cout << *i;
+        cout << game;
 
     }
 
-        return os;
+    return os;
 
 }
 
