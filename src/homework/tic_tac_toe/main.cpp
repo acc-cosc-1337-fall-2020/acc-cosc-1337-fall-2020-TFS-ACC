@@ -11,9 +11,9 @@ int main()
 	int board = 0;
 	
 	//outputs
-	int xwin = 0;
-	int owin = 0; 
-	int tie = 0;
+	// int xwin = 0;
+	// int owin = 0; 
+	// int tie = 0;
 	string winner;
 
 	//instances 
@@ -63,30 +63,26 @@ int main()
 
 		game->start_game(playerOne);
 
-		cout << game;
+		cout << *game;
 
 		do{
 
-			cin >> game;
+			cin >> *game;
 
-			cout << game;
+			cout << *game;
 
-			cout << "Continue playing? (Y or y): ";
-			cin >> cont;
+			// cout << "Continue playing? (Y or y): ";
+			// cin >> cont;
 
 		}while(game->game_over() == false);
 
-		Manager.save_game(game);
+		Manager.save_game(move(game));
 
-		winner = game->get_winner();
+		// winner = game->get_winner();
 
-		Manager.get_winner_total(xwin, owin, tie);
+		//Manager.get_winner_total(xwin, owin, tie);
 
-		cout << "W I N N E R!: " << winner << "\n";
-
-		cout << "X  W I N S: " << xwin << "\n"
-			<< "O  W I N S: " << owin << "\n" 
-			<< "T I E S: " << tie << "\n";
+		//cout << "W I N N E R!: " << winner << "\n";
 
 		cout << "Do you want to play again? (Y or y): ";
 

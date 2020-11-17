@@ -51,28 +51,28 @@ string TicTacToe::get_player() const {
 //         << " " << "---" << " " << "---" << " " << "---" << " " << "\n" << "\n";
 //}
 
-ostream& operator<< (ostream& os, unique_ptr<TicTacToe>& tic){
+ostream& operator<< (ostream& os, TicTacToe& tic){
 
-    if (tic->pegs.size() == 9){
+    if (tic.pegs.size() == 9){
  
         cout << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
-            << "|" << " " << tic->pegs[0] << " " << "|" << " " << tic->pegs[1] << " " << "|" << " " << tic->pegs[2] << " " << "|" << "\n"
+            << "|" << " " << tic.pegs[0] << " " << "|" << " " << tic.pegs[1] << " " << "|" << " " << tic.pegs[2] << " " << "|" << "\n"
             << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
-            << "|" << " " << tic->pegs[3] << " " << "|" << " " << tic->pegs[4] << " " << "|" << " " << tic->pegs[5] << " " << "|" << "\n"
+            << "|" << " " << tic.pegs[3] << " " << "|" << " " << tic.pegs[4] << " " << "|" << " " << tic.pegs[5] << " " << "|" << "\n"
             << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
-            << "|" << " " << tic->pegs[6] << " " << "|" << " " << tic->pegs[7] << " " << "|" << " " << tic->pegs[8] << " " << "|" << "\n"
+            << "|" << " " << tic.pegs[6] << " " << "|" << " " << tic.pegs[7] << " " << "|" << " " << tic.pegs[8] << " " << "|" << "\n"
             << " " << "---" << " " << "---" << " " << "---" << " " << "\n" << "\n";
 
-    }else if (tic->pegs.size() == 16){
+    }else if (tic.pegs.size() == 16){
 
         cout << " " << "---" << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
-            << "|" << " " << tic->pegs[0] << " " << "|" << " " << tic->pegs[1] << " " << "|" << " " << tic->pegs[2] << " " << "|" << " " << tic->pegs[3] << " " << "|" << "\n"
+            << "|" << " " << tic.pegs[0] << " " << "|" << " " << tic.pegs[1] << " " << "|" << " " << tic.pegs[2] << " " << "|" << " " << tic.pegs[3] << " " << "|" << "\n"
             << " " << "---" << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
-            << "|" << " " << tic->pegs[4] << " " << "|" << " " << tic->pegs[5] << " " << "|" << " " << tic->pegs[6] << " " << "|" << " " << tic->pegs[7] << " " << "|" << "\n"
+            << "|" << " " << tic.pegs[4] << " " << "|" << " " << tic.pegs[5] << " " << "|" << " " << tic.pegs[6] << " " << "|" << " " << tic.pegs[7] << " " << "|" << "\n"
             << " " << "---" << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
-            << "|" << " " << tic->pegs[8] << " " << "|" << " " << tic->pegs[9] << " " << "|" << " " << tic->pegs[10] << " " << "|" << " " << tic->pegs[11] << " " << "|" << "\n"
+            << "|" << " " << tic.pegs[8] << " " << "|" << " " << tic.pegs[9] << " " << "|" << " " << tic.pegs[10] << " " << "|" << " " << tic.pegs[11] << " " << "|" << "\n"
             << " " << "---" << " " << "---" << " " << "---" << " " << "---" << " " << "\n"
-            << "|" << " " << tic->pegs[12] << " " << "|" << " " << tic->pegs[13] << " " << "|" << " " << tic->pegs[14] << " " << "|" << " " << tic->pegs[15] << " " << "|" << "\n"
+            << "|" << " " << tic.pegs[12] << " " << "|" << " " << tic.pegs[13] << " " << "|" << " " << tic.pegs[14] << " " << "|" << " " << tic.pegs[15] << " " << "|" << "\n"
             << " " << "---" << " " << "---" << " " << "---" << " " << "---" << " " << "\n" << "\n";
 
     }else{
@@ -85,15 +85,15 @@ ostream& operator<< (ostream& os, unique_ptr<TicTacToe>& tic){
 
 }
 
-istream& operator>> (istream& is, unique_ptr<TicTacToe>& tic){
+istream& operator>> (istream& is, TicTacToe& tic){
 
-        string currentPlayer = tic->get_player();
+        string currentPlayer = tic.get_player();
         int position;
     	
         cout << currentPlayer << "\'s turn"<< "\n" << " " << "Please Choose a Position number!: ";
 		cin >> position;
 
-		tic->mark_board(position);    
+		tic.mark_board(position);    
 
     return is;
 

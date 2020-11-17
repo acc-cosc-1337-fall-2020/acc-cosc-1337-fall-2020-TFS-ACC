@@ -15,20 +15,20 @@ class TicTacToeManager
 
         //Public Variables
         //vector<TicTacToe> games;
-        vector<unique_ptr<TicTacToe>> games;
+        //vector<unique_ptr<TicTacToe>> games;
 
         //Public Functions
-        void save_game(unique_ptr<TicTacToe>& game);
+        void save_game(unique_ptr<TicTacToe> game);
         void get_winner_total(int& x, int& o, int& t);
-        friend ostream& operator<< (ostream& os, TicTacToeManager& man);
+        friend ostream& operator<< (ostream& os, const TicTacToeManager& man);
 
     private:
 
         //Private Variables
-        
-        int X_win = 0;
-        int O_win = 0;
-        int tie = 0;
+        vector<unique_ptr<TicTacToe>> games;      
+        int X_win{0};
+        int O_win{0};
+        int tie{0};
 
         //Private Functions
         void update_winner_count(std::string winner);
