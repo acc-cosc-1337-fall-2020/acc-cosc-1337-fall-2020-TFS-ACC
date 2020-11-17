@@ -14,8 +14,6 @@ class TicTacToeManager
     public: ////////////////////////
 
         //Public Variables
-        //vector<TicTacToe> games;
-        //vector<unique_ptr<TicTacToe>> games;
 
         //Public Functions
         void save_game(unique_ptr<TicTacToe> game);

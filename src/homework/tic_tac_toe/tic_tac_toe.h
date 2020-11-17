@@ -34,15 +34,11 @@ class TicTacToe
         //PRIVATE VARIABLES
         string player;
         string winner;
-        //vector<string> pegs = vector<string>(9, " ");
 
         //PRIVATE FUNCTIONS
         void set_next_player();
         bool check_board_full();
         void clear_board();
-        // bool check_column_win();
-        // bool check_row_win();
-        // bool check_diagonal_win();
         void set_winner();
 
     protected:///////////////////////////////////////

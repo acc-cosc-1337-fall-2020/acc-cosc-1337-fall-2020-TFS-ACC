@@ -33,9 +33,6 @@ void TicTacToeManager::get_winner_total(int& x, int& o, int& t){
 		<< "O  W I N S: " << o << "\n" 
 		<< "T I E S: " << tie << "\n";
 
-    // o = TicTacToeManager::O_win;
-    // x = TicTacToeManager::X_win;
-    // t = TicTacToeManager::tie;
 
 }
 
