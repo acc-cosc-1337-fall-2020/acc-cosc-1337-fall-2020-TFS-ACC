@@ -1,5 +1,6 @@
 //h
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <algorithm>
 #include <memory>
@@ -15,6 +16,7 @@ class TicTacToe
 
         //CONSTRUCTOR
         TicTacToe(int s): pegs(s*s, " "){};
+        TicTacToe(std::vector<string> p, string win): pegs(p), winner(win){};
 
         //PUBLIC VARIABLES
         bool game_over();

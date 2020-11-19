@@ -14,6 +14,8 @@ class TicTacToe3 : public TicTacToe {
     
     //CONSTRUCTOR
     TicTacToe3(): TicTacToe(3){};
+    TicTacToe3(std::vector<string> p, string win): TicTacToe(p, win){};
+    
     
     private:////////////////////////////////////////
 
