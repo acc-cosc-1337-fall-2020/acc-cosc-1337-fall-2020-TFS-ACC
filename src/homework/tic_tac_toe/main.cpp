@@ -1,6 +1,6 @@
 //#include<tic_tac_toe.h>
-#include<tic_tac_toe_3.h>
-#include<tic_tac_toe_4.h>
+//#include<tic_tac_toe_3.h>
+//#include<tic_tac_toe_4.h>
 #include<tic_tac_toe_manager.h>
 
 int main() 
@@ -15,7 +15,8 @@ int main()
 
 	//instances 
 	unique_ptr<TicTacToe> game;
-	TicTacToeManager Manager;
+	TicTacToeData data;
+	TicTacToeManager Manager(data);
 	
 	do{
 
