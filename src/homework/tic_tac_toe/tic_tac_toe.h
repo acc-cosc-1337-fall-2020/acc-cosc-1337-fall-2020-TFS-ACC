@@ -13,13 +13,14 @@ class TicTacToe
 {
 
     public://///////////////////////////////////////
-
+    
         //CONSTRUCTOR
         TicTacToe(int s): pegs(s*s, " "){};
         TicTacToe(std::vector<string> p, string win): pegs(p), winner(win){};
 
         //PUBLIC VARIABLES
         bool game_over();
+        vector<string> pegs;
      
         //PUBLIC FUNCTIONS
         void start_game(string first_player);
@@ -46,7 +47,7 @@ class TicTacToe
     protected:///////////////////////////////////////
 
         //PROTECTED VARIABLES
-        vector<string> pegs;
+        // vector<string> pegs;
 
         //PROTECTED FUNCTIONS
 
