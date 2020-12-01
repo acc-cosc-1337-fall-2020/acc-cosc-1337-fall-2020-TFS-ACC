@@ -34,10 +34,8 @@ std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games(){
 
     string line;
 
-    vector<string> pegs;
-
     while(getline(tictactoedat, line)){
-
+        vector<string> pegs;
         for (auto ch: line){
 
             pegs.push_back(string(1, ch));
@@ -49,7 +47,7 @@ std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games(){
         pegs.pop_back();
 
         unique_ptr<TicTacToe> board;
-
+        std::cout<<"Size " <<pegs.size()<<"\n";
         if (pegs.size() == 9){
 
             board = make_unique<TicTacToe3>(pegs, winner);
